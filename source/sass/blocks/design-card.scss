@@ -1,47 +1,55 @@
-.design-content__design-card-wrapper {
+.design-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    max-width: 1184px;
+
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+}
+
+.design-card--open {
+    display: block;
+}
+
+.design-card__inner {
+    position: relative;
+    height: 100%;
+    padding: 40px 32px;
+    background-color: #fff;
+    border-radius: 6px;
+
+    overflow: scroll;
+}
+
+.design-card__inner::-webkit-scrollbar {
+    display: none;
+}
+
+.card-overlay {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(31, 33, 40, 0.7);
-    z-index: 100;
-    overflow-y: auto;
+    z-index: 99;
+
     display: none;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 300px 42px 50px;
-
-    @media (max-width: 1280px) {
-        padding-top: 200px;
-    }
-
-    @media (max-width: 768px) {
-        padding-top: 500px;
-    }
 }
 
-.design-content__design-card-wrapper--open {
-    display: flex;
-}
-
-.design-card__inner {
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 40px 32px;
-    width: 100%;
-    max-width: 1184px;
-    margin: 0 auto;
-    flex-shrink: 0;
-    position: relative;
+.card-overlay--open {
+    display: block;
 }
 
 .design-card__close-btn {
     position: absolute;
-    top: 0;
-    right: -35px;
+    top: 15px;
+    right: 15px;
     width: 30px;
     height: 30px;
     border: none;
@@ -55,7 +63,7 @@
 
 .design-card__top {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 30px;
 
     @media (max-width: 768px) {
@@ -86,7 +94,7 @@
 
 .design-card__content {
     max-width: 422px;
-    margin-left: auto;
+    // margin-left: auto;
 
     @media (max-width: 1024px) {
         max-width: 250px;

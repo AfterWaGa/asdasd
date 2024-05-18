@@ -65,16 +65,24 @@ export default function createDesign() {
 
     // Открытие карточки дизайна
 
-    const designCard = document.querySelector(".design-content__design-card-wrapper");
+    const designCard = document.querySelector(".design-card");
     const openDesignCard = document.querySelector(".card-template--open");
     const closeDesignCard = document.querySelector(".design-card__close-btn");
+    const designOverlay = document.querySelector(".card-overlay");
 
     openDesignCard.addEventListener("click", function () {
-        designCard.classList.add("design-content__design-card-wrapper--open");
+        designOverlay.classList.add("card-overlay--open");
+        designCard.classList.add("design-card--open");
     });
 
     closeDesignCard.addEventListener("click", function () {
-        designCard.classList.remove("design-content__design-card-wrapper--open");
+        designOverlay.classList.remove("card-overlay--open");
+        designCard.classList.remove("design-card--open");
+    });
+
+    designOverlay.addEventListener("click", function () {
+        designOverlay.classList.remove("card-overlay--open");
+        designCard.classList.remove("design-card--open");
     });
 
     // Tags слайдер
