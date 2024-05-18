@@ -2,48 +2,13 @@ import { slide } from "./functions.js";
 
 export default function createDesign() {
     // Фильтры на странице Create Design
-    const showPopular = document.querySelector(".show-popular");
-    const showMedia = document.querySelector(".show-media");
-    const showMarketing = document.querySelector(".show-marketing");
-    const showAdvertising = document.querySelector(".show-advertising");
-    const showBranding = document.querySelector(".show-branding");
-    const showOffice = document.querySelector(".show-office");
-    const showMore = document.querySelector(".show-more");
 
-    const filtersPopular = document.querySelector(".popular");
-    const filtersMedia = document.querySelector(".social-media");
-    const filtersMarketing = document.querySelector(".marketing");
-    const filtersAdvertising = document.querySelector(".advertising");
-    const filtersBranding = document.querySelector(".branding");
-    const filtersOffice = document.querySelector(".office");
-    const filtersMore = document.querySelector(".more");
+    const openFilterBtns = document.querySelectorAll(".design-filters__toggler");
 
-    showPopular.addEventListener("click", function () {
-        filtersPopular.classList.toggle("popular--opened");
-    });
-
-    showMedia.addEventListener("click", function () {
-        filtersMedia.classList.toggle("social-media--opened");
-    });
-
-    showMarketing.addEventListener("click", function () {
-        filtersMarketing.classList.toggle("marketing--opened");
-    });
-
-    showAdvertising.addEventListener("click", function () {
-        filtersAdvertising.classList.toggle("advertising--opened");
-    });
-
-    showBranding.addEventListener("click", function () {
-        filtersBranding.classList.toggle("branding--opened");
-    });
-
-    showOffice.addEventListener("click", function () {
-        filtersOffice.classList.toggle("office--opened");
-    });
-
-    showMore.addEventListener("click", function () {
-        filtersMore.classList.toggle("more--opened");
+    openFilterBtns.forEach((toggler) => {
+        toggler.addEventListener("click", function () {
+            toggler.nextElementSibling.classList.toggle("design-filters--opened");
+        });
     });
 
     // Открытие фильтров

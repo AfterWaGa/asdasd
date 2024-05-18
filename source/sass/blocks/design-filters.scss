@@ -69,13 +69,7 @@
     }
 }
 
-.design-filters__wrapper:has(.popular--opened) .design-filters__btn,
-.design-filters__wrapper:has(.social-media--opened) .design-filters__btn,
-.design-filters__wrapper:has(.marketing--opened) .design-filters__btn,
-.design-filters__wrapper:has(.advertising--opened) .design-filters__btn,
-.design-filters__wrapper:has(.branding--opened) .design-filters__btn,
-.design-filters__wrapper:has(.office--opened) .design-filters__btn,
-.design-filters__wrapper:has(.more--opened) .design-filters__btn {
+.design-filters__wrapper:has(.design-filters--opened) .design-filters__btn {
     background-image: url(../img/acc_arrow-up.svg);
 }
 
@@ -301,12 +295,6 @@
     display: none;
 }
 
-.popular--opened,
-.social-media--opened,
-.marketing--opened,
-.advertising--opened,
-.branding--opened,
-.office--opened,
-.more--opened {
+.design-filters--opened {
     display: flex;
 }
