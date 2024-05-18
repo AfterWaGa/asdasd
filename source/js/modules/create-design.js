@@ -53,20 +53,15 @@ export default function createDesign() {
     const filtersMobile = document.querySelector(".design-filters");
     const contentWrapper = document.querySelector(".design-content__inner");
 
-    if (document.documentElement.clientWidth > 1024) {
-        showFilters.addEventListener("click", function () {
+    showFilters.addEventListener("click", function () {
+        if (document.documentElement.clientWidth > 1024) {
             filtersWrapper.classList.toggle("filters--open");
             contentWrapper.classList.toggle("design-content__inner--filters-closed");
-        });
-    }
-
-    // Открытие фильтров на мобилке
-    if (document.documentElement.clientWidth <= 1024) {
-        showFilters.addEventListener("click", function () {
+        } else if (document.documentElement.clientWidth <= 1024) {
             filtersMobile.classList.toggle("filters--open-mobile");
             filtersWrapper.classList.remove("filters--open");
-        });
-    }
+        }
+    });
 
     // Открытие карточки дизайна
 
