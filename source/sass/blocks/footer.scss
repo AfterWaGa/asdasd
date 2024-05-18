@@ -1,7 +1,8 @@
 .page-footer {
-    position: relative;
+    border-top: 1px solid var(--color-border);
 
     &__wrapper {
+        width: 100%;
         max-width: 1920px;
         padding: 0 32px;
         margin: 0 auto;
@@ -9,16 +10,6 @@
         @media (max-width: 768px) {
             padding: 0 20px;
         }
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        height: 1px;
-        background-color: var(--color-border);
-        top: 0;
-        left: 0;
-        right: 0;
     }
 }
 
@@ -120,6 +111,12 @@
         @media (max-width: 1024px) {
             gap: 60px;
             flex-wrap: wrap;
+        }
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 0;
         }
     }
 
