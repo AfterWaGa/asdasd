@@ -1,5 +1,3 @@
-//  https://www.dev-notes.ru/articles/javascript-require-vs-import/
-
 import gulp from "gulp";
 import plumber from "gulp-plumber";
 import sass from "gulp-dart-sass";
@@ -13,7 +11,7 @@ import csso from "postcss-csso";
 import imagemin from "gulp-imagemin";
 import webp from "gulp-webp";
 import svgstore from "gulp-svgstore";
-import { deleteAsync } from "del"; // на npmjs.com написано так добавлять
+import { deleteAsync } from "del";
 
 import sync from "browser-sync";
 
@@ -124,7 +122,6 @@ const watcher = () => {
     gulp.watch("source/sass/**/*.scss", gulp.series(styles));
     gulp.watch("source/js/modules/*", gulp.series(modules));
     gulp.watch("source/js/*", gulp.series(scripts));
-    // gulp.watch('source/*.html').on('change', sync.reload); // заменил эту строку из обновления от Кекса в разделе препроцессоров на нижнюю, так как при каждом изменении html-файлов нужно запускать теперь еше функцию минификации html.
     gulp.watch("source/*.html", gulp.series(html, reload));
 };
 
